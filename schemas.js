@@ -8,10 +8,12 @@ var componentSchema = {
     'title': 'base component schema',
     'type': 'object',
     'required': ['metadata', 'slug', 'content_type', 'schema_name'],
+    'uri': stringSchema,
+    'data_uri': stringSchema,
     'properties': {
         'slug': stringSchema,
         'content_type': stringSchema,
-        'schema_name': stringSchema,
+        'schema_name': stringSchema, 
         'metadata': {
             'type': 'object',
             'properties': [],
