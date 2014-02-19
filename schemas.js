@@ -87,13 +87,14 @@ articleSchema = _.merge({}, componentSchema, {
     }
 });
 articleSchema.required.push('master_image', 'byline');
+var tv4s = tv4.freshApi();
+tv4s.addSchema('component', componentSchema);
+tv4s.addSchema('image', imageSchema);
+tv4s.addSchema('author', authorSchema);
+tv4s.addSchema('canonImage', canonImageSchema);
+tv4s.addSchema('article', articleSchema);
 
-tv4.addSchema('component', componentSchema);
-tv4.addSchema('image', imageSchema);
-tv4.addSchema('author', authorSchema);
-tv4.addSchema('canonImage', canonImageSchema);
-tv4.addSchema('article', articleSchema);
-
+exports.tv4s = tv4s;
 exports.stringSchema = stringSchema;
 exports.componentSchema = componentSchema;
 exports.imageSchema = imageSchema;

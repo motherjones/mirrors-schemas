@@ -1,6 +1,7 @@
 var _ = require('lodash');
-var tv4 = require('tv4');
 var schemas = require('./schemas');
+
+var tv4s = schemas.tv4s;
 
 // Tests for schemas
 var component = {
@@ -11,8 +12,17 @@ var component = {
 }
 component.test = component;
 component.test_list = [component, component];
-console.log(tv4.validateMultiple(component, schemas.componentSchema, true));
-console.log(tv4.validateMultiple(component, schemas.authorSchema, true));
+
+exports.testComponentIsComponent = function(test) {
+    test.expect(1);
+    test.equal(tv4s.validateMultiple(component, schemas.componentSchema, true).errors.length, 0);
+    test.done();
+};
+exports.testComponentIsNotAuthor = function(test) {
+    test.expect(1);
+    test.notEqual(tv4s.validateMultiple(component, schemas.authorSchema, true).errors.length, 0);
+    test.done();
+};
 var image = _.merge({}, component, {
     'content_type': 'image/png',
 })
@@ -28,8 +38,17 @@ var author = _.merge({}, component, {
     },
     'photograph': image
 });
-console.log(tv4.validateMultiple(author, schemas.authorSchema, true));
-console.log(tv4.validateMultiple(image, schemas.imageSchema, true));
+exports.testAuthorIsAuthor = function(test) {
+    test.expect(1);
+    test.equal(tv4s.validateMultiple(author, schemas.authorSchema, true).errors.length, 0);
+    test.done();
+};
+
+exports.testImageIsImage = function(test) {
+    test.expect(1);
+    test.equal(tv4s.validateMultiple(image, schemas.imageSchema, true).errors.length, 0);
+    test.done();
+}
 var canon_image = _.merge({}, image, {
     'metadata': {
         'alt_txt': 'alt',
@@ -40,7 +59,12 @@ var canon_image = _.merge({}, image, {
         author
     ]
 });
-console.log(tv4.validateMultiple(canon_image, schemas.canonImageSchema, true));
+exports.testCanonImageIsCanonImage = function(test) {
+    test.expect(1);
+    test.equal(tv4s.validateMultiple(canon_image, schemas.canonImageSchema, true).errors.length, 0);
+    test.done();
+};
+
 var article = _.merge({}, component, {
     'content_type': 'text/x-markdown',
     'metadata': {
@@ -50,4 +74,8 @@ var article = _.merge({}, component, {
     'byline': [author], //maybe make just author optional for 1
     'master_image': canon_image
 });
-console.log(tv4.validateMultiple(article, schemas.articleSchema, true));
+exports.testCanonImageIsCanonImage = function(test) {
+    test.expect(1);
+    test.equal(tv4s.validateMultiple(article, schemas.articleSchema, true).errors.length, 0);
+    test.done();
+};
