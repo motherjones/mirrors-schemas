@@ -1,4 +1,12 @@
 # Mirrors Schemas
+To run tests do
+nodeunit tests.js
 
-There really isn't much to see here, but some time in the future there
-probably will be.
+To verify something is an article run
+./check_is_valid.js ./path/to/json
+
+TODO: 
+
+Make this work for all schemas
+Add ids to schemas
+Update Docs
