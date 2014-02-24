@@ -53,9 +53,7 @@ var imageSchema = componentSchema.extend({
     'title': 'base image schema', 
     'id': '#image',
     'properties': {
-        'content_type': {
-            ['image/png', 'image/gif', 'image/jpeg']
-        },
+        'content_type': ['image/png', 'image/gif', 'image/jpeg'],
         'metadata': {
             'properties': {
                 'alt_text': stringSchema,
