@@ -29,31 +29,39 @@ var componentSchema = {
         }]
     }
 };
+componentSchema.extend = function(schema) {
+    return _.merge({}, this, schema, function(a, b) {
+          return _.isArray(a) ? a.concat(b) : undefined;
+    });
+}
 
-var imageSchema = _.merge({}, componentSchema, {
+var imageSchema = componentSchema.extend({
     'title': 'base image schema',
+    'properties': {
+        'content_type': ['image/png', 'image/gif', 'image/jpeg'],
+        'metadata': {
+            'properties': {
+                'alt_txt': stringSchema,
+                'caption': stringSchema,
+                'license': ['MIT', 'GPL', 'CC', 'PD'],
+                'attribution': stringSchema //require if no byline on canonImage
+            }
+        }
+    }
 });
 
-imageSchema.properties.content_type = ['image/png', 'image/gif', 'image/jpeg'];
-imageSchema.properties.metadata.required = [];
-imageSchema.properties.metadata.properties = {
-    'alt_txt': stringSchema,
-    'caption': stringSchema,
-    'license': ['MIT', 'GPL', 'CC', 'PD'],
-    'attribution': stringSchema //require if no byline on canonImage
-};
-
-var canonImageSchema = _.clone(imageSchema, isDeep=true);
-canonImageSchema.properties.metadata.required.push('alt_txt', 'attribution', 'license');
-_.merge(canonImageSchema,{
+var canonImageSchema = imageSchema.extend({
     'title': 'canon images Schema',
     'properties': {
+        'metadata': {
+            'required': ['alt_txt', 'attribution', 'license']
+        },
         'byline': {
             'type': 'array',
             'items': { '$ref': 'author' }
         }
     }
-});
+})
 
 var authorSchema = _.merge({}, componentSchema, {
     'title': 'authors schema',
