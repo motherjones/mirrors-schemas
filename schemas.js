@@ -4,14 +4,27 @@ var tv4 = require('tv4');
 var stringSchema = {
     'type': 'string'
 };
+
+var slugSchema = {
+    'type': 'string'
+};
+
+var uriSchema = {
+    'type': 'string'
+};
+
+var emailSchema = {
+    'type': 'string'
+};
+
 var componentSchema = {
     'title': 'base component schema',
     'type': 'object',
-    'required': ['metadata', 'slug', 'content_type', 'schema_name'],
-    'uri': stringSchema,
-    'data_uri': stringSchema,
+    'required': ['metadata', 'slug', 'content_type', 'schema_name', 'uri'],
     'properties': {
-        'slug': stringSchema,
+	    'uri': stringSchema,
+	    'data_uri': stringSchema,
+        'slug': slugSchema,
         'content_type': stringSchema,
         'schema_name': stringSchema, 
         'metadata': {
@@ -43,15 +56,14 @@ var imageSchema = componentSchema.extend({
             'properties': {
                 'alt_txt': stringSchema,
                 'caption': stringSchema,
-                'license': ['MIT', 'GPL', 'CC', 'PD'],
+                'license': ['MIT', 'GPL', 'CC', 'PD', '??'],
                 'attribution': stringSchema //require if no byline on canonImage
             }
         }
     }
 });
-
 var canonImageSchema = imageSchema.extend({
-    'title': 'canon images Schema',
+   'title': 'canon images Schema',
     'properties': {
         'metadata': {
             'required': ['alt_txt', 'attribution', 'license']
@@ -67,14 +79,15 @@ var authorSchema = _.merge({}, componentSchema, {
     'title': 'authors schema',
     'photograph': { '$ref': 'image' }
 });
-authorSchema.required.push('photograph');
+// photograph is *not* required!
+// authorSchema.required.push('photograph');
 authorSchema.properties.metadata.required = [
     'first_name', 'last_name', 'short_bio', 'email', 'end_of_article_bio'];
 authorSchema.properties.metadata.properties = {
     'first_name': stringSchema,
     'last_name': stringSchema,
     'short_bio': stringSchema,
-    'email': stringSchema,
+    'email': emailSchema,
     'twitter_user': stringSchema,
     'end_of_article_bio': stringSchema
 };
@@ -105,7 +118,12 @@ tv4s.addSchema('canonImage', canonImageSchema);
 tv4s.addSchema('article', articleSchema);
 
 exports.tv4s = tv4s;
+
 exports.stringSchema = stringSchema;
+exports.slugSchema = slugSchema; 
+exports.uriSchema = uriSchema;
+exports.emailSchema = emailSchema;
+
 exports.componentSchema = componentSchema;
 exports.imageSchema = imageSchema;
 exports.canonImageSchema = canonImageSchema;
