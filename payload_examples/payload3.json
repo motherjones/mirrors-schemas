@@ -1,30 +1,56 @@
-{"content_type": "text/x-markdown",
-"metadata": {
+{
+    "uri": "/mixed-media/2014/02/speedy-ortiz-real-hair-ep-review",
+    "data_uri": "/files/speedy-ortiz-real-hair-ep-review/content.md",
+    "content_type": "text/x-markdown",
+    "schema_name": "article",
+    "slug": "speedy-ortiz-real-hair-ep-review",
+    "metadata": {
 	"title": "Speedy Ortiz's \"Real Hair\" Melds Brains With Brawn",
 	"description": "The Massachusetts rockers' new EP transcends its smart-but-rowdy roots.",
 	"social_title": "Speedy Ortiz's \"Real Hair\" melds brains with brawn",
 	"section": "mixed-media",
-	"tags": "music"
-},
-"byline": [
-	{
-	"slug": "jon-young",
-	"metadata": {
-		"first_name": "Jon",
-		"last_name": "Young",
-		"title": "Contributing Writer",
-		"short_bio": "Jon Young is a contributing writer for _Mother Jones_.",
-		"end_of_article_bio": "Jon Young is a contributing writer for <span style=\"font-style:normal;\">Mother Jones</span>. For more of his stories, <a href=\"http://www.motherjones.com/authors/jon-young\">click here</a>."
-		}
+	"tags": ["music"]
+    },
+    "byline": [
+	{ "slug": "jon-young",
+	  "schema_name": "author",
+	  "content_type": "application_json",
+	  "uri": "authors/jon-young",
+	  "metadata": {
+	      "first_name": "Jon",
+	      "last_name": "Young",
+	      "title": "Contributing Writer",
+	      "short_bio": "Jon Young is a contributing writer for _Mother Jones_.",
+	      "end_of_article_bio": "Jon Young is a contributing writer for <span style=\"font-style:normal;\">Mother Jones</span>. For more of his stories, <a href=\"http://www.motherjones.com/authors/jon-young\">click here</a>.",
+	      "email": "jyoung@motherjones.com"
+	  }
 	}
-],
-"master_image": {
+    ],
+    "master_image": {
+	"slug": "speedy-ortiz-real-hair-ep-review-speedyortiz630x354-jpg",
+	"uri": "/mixed-media/2014/02/speedy-ortiz-real-hair-ep-review/speedyortiz630x354.jpg",
+	"schema_name": "image",
 	"content_type": "image/jpeg",
-	"alt_text": "Speedy Ortiz",
-	"caption": null,
-	"license": null,
-	"attribution": "Courtesy of Carpark Records",
-	"content": "http://www.motherjones.com/files/imagecache/top-of-content-main/speedyortiz630x354.jpg"
-},
-"content": "**Speedy Ortiz\n_Real Hair_\nCarpark**\n\n![Speedy Ortiz Real Hair](/files/SpeedyOrtizRealHair300.jpg)\n\nUndaunted by heavy, heavy guitars and thrashing drums, loquacious Sadie Dupuis issues a steady stream of dense, intriguing lyrics with poised resolve on this exciting four-track sequel to Speedy Ortiz's stunning 2013 long-player _Major Arcana_.\n\nAdept at playing the unreliable narrator, she offers tantalizing glimpses of lives in flux, murmuring, \"I don't know whose call it was that I should share a life/With someone who resembles me and copies my speech,\" in the track \"Everything's Bigger\" and singing sweetly, \"They say I am a spoiled mess/I never fold up what should fold/And shine much better in my house alone\" on \"Shine Theory.\"\n\nWhile smart-but-rowdy bands like the Pixies and Breeders remain obvious touchstones for the Northampton, Massachusetts, quartet, Speedy Ortiz has forged its own distinctive identity, melding brains, brawn, and a dash of eccentric magic in impressive fashion."
+	"metadata": {
+	    "alt_text": "Speedy Ortiz",
+	    "caption": null,
+	    "license": "??",
+	    "attribution": "Courtesy of Carpark Records",
+	    "data_uri": "files/speedy-ortiz-real-hair-ep-review/speedyortiz630x354.jpg"
+	}
+    },
+    "photos": [
+	{ "schema_name": "canon-image",
+	  "slug": "speedy-ortiz-real-hair-300",
+	  "content_type": "image/jpeg",
+	  "uri": "/mixed-media/2014/02/speedy-ortiz-real-hair-ep-review/SpeedyOrtizRealHair300.jpg",
+	  "metadata": {
+	      "alt_text": "Cover of Real Hair",
+	      "caption": null,
+	      "attribution": null,
+	      "data_uri": "files/speedy-ortiz-real-hair-ep-review/SpeedyOrtizRealHair300.jpg",
+	      "license": "??"
+	  }
+	}
+    ]
 }
