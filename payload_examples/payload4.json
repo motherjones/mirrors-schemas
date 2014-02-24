@@ -21,7 +21,7 @@
 	],
 	"master_image": {
 		"content_type": "image/jpeg",
-		"alt_txt": null,
+		"alt_text": null,
 		"caption": null,
 		"license": null,
 		"attribution": null,

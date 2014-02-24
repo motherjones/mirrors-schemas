@@ -20,6 +20,7 @@ var emailSchema = {
 var componentSchema = {
     'title': 'base component schema',
     'type': 'object',
+    'id': '#component',
     'required': ['metadata', 'slug', 'content_type', 'schema_name', 'uri'],
     'properties': {
 	    'uri': stringSchema,
@@ -49,12 +50,15 @@ componentSchema.extend = function(schema) {
 }
 
 var imageSchema = componentSchema.extend({
-    'title': 'base image schema',
+    'title': 'base image schema', 
+    'id': '#image',
     'properties': {
-        'content_type': ['image/png', 'image/gif', 'image/jpeg'],
+        'content_type': {
+            ['image/png', 'image/gif', 'image/jpeg']
+        },
         'metadata': {
             'properties': {
-                'alt_txt': stringSchema,
+                'alt_text': stringSchema,
                 'caption': stringSchema,
                 'license': ['MIT', 'GPL', 'CC', 'PD', '??'],
                 'attribution': stringSchema //require if no byline on canonImage
@@ -66,7 +70,7 @@ var canonImageSchema = imageSchema.extend({
    'title': 'canon images Schema',
     'properties': {
         'metadata': {
-            'required': ['alt_txt', 'attribution', 'license']
+            'required': ['alt_text', 'attribution', 'license']
         },
         'byline': {
             'type': 'array',
@@ -94,6 +98,7 @@ authorSchema.properties.metadata.properties = {
 
 articleSchema = _.merge({}, componentSchema, {
     'title': 'article Schema',
+    'id': '#component', 
     'properties': {
         'content_type': ['text/x-markdown'], //?include html or make legacy class
         'master_image': { '$ref': 'canonImage'},

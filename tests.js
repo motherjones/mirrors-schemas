@@ -5,6 +5,7 @@ var tv4s = schemas.tv4s;
 
 // Tests for schemas
 var component = {
+    'uri': 'uri',
     'slug': 'component',
     'content_type': 'component',
     'schema_name': 'component',
@@ -51,7 +52,7 @@ exports.testImageIsImage = function(test) {
 }
 var canon_image = _.merge({}, image, {
     'metadata': {
-        'alt_txt': 'alt',
+        'alt_text': 'alt',
         'license': 'CC',
         'attribution': 'test',
     },
