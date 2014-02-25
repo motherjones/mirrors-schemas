@@ -2,22 +2,27 @@ var _ = require('lodash');
 var tv4 = require('tv4');
 
 var stringSchema = {
+    'id': 'stringSchema',
     'type': 'string'
 };
 
 var slugSchema = {
+    'id': 'slugSchema',
     'type': 'string'
 };
 
 var uriSchema = {
+    'id': 'uriSchema',
     'type': 'string'
 };
 
 var emailSchema = {
+    'id': 'emailSchema',
     'type': 'string'
 };
 
 var componentSchema = {
+    'id': 'component',
     'title': 'base component schema',
     'type': 'object',
     'required': ['metadata', 'slug', 'content_type', 'schema_name', 'uri'],
@@ -50,6 +55,7 @@ componentSchema.extend = function(schema) {
 
 console.log(componentSchema);
 var imageSchema = componentSchema.extend({
+    'id': 'image',
     'title': 'base image schema', 
     'properties': {
         'content_type': {
@@ -69,6 +75,7 @@ var imageSchema = componentSchema.extend({
 console.log(imageSchema);
 console.log(stringSchema);
 var canonImageSchema = imageSchema.extend({
+   'id': 'canonImage',
    'title': 'canon images Schema',
     'properties': {
         'metadata': {
@@ -82,6 +89,7 @@ var canonImageSchema = imageSchema.extend({
 })
 
 var authorSchema = _.merge({}, componentSchema, {
+    'id': 'author',
     'title': 'authors schema',
     'photograph': { '$ref': 'image' }
 });
@@ -99,6 +107,7 @@ authorSchema.properties.metadata.properties = {
 };
 
 articleSchema = _.merge({}, componentSchema, {
+    'id': 'article',
     'title': 'article Schema',
     'properties': {
         'content_type': ['text/x-markdown'], //?include html or make legacy class
@@ -121,11 +130,11 @@ articleSchema = _.merge({}, componentSchema, {
 });
 articleSchema.required.push('master_image', 'byline');
 var tv4s = tv4.freshApi();
-tv4s.addSchema('component', componentSchema);
-tv4s.addSchema('image', imageSchema);
-tv4s.addSchema('author', authorSchema);
-tv4s.addSchema('canonImage', canonImageSchema);
-tv4s.addSchema('article', articleSchema);
+tv4s.addSchema(componentSchema);
+tv4s.addSchema(imageSchema);
+tv4s.addSchema(authorSchema);
+tv4s.addSchema(canonImageSchema);
+tv4s.addSchema(articleSchema);
 
 exports.tv4s = tv4s;
 
