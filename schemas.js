@@ -25,7 +25,7 @@ var componentSchema = {
 	    'uri': stringSchema,
 	    'data_uri': stringSchema,
         'slug': slugSchema,
-        'content_type': stringSchema,
+        'content_type': _.clone(stringSchema),
         'schema_name': stringSchema, 
         'metadata': {
             'type': 'object',
@@ -46,8 +46,9 @@ componentSchema.extend = function(schema) {
     return _.merge({}, this, schema, function(a, b) {
           return _.isArray(a) ? a.concat(b) : undefined;
     });
-}
+};
 
+console.log(componentSchema);
 var imageSchema = componentSchema.extend({
     'title': 'base image schema', 
     'properties': {
@@ -66,6 +67,7 @@ var imageSchema = componentSchema.extend({
     }
 });
 console.log(imageSchema);
+console.log(stringSchema);
 var canonImageSchema = imageSchema.extend({
    'title': 'canon images Schema',
     'properties': {
