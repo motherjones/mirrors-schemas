@@ -110,7 +110,11 @@ articleSchema = _.merge({}, componentSchema, {
                 'title': stringSchema,
                 'description': stringSchema
             }
-        }
+        },
+	'photos': {
+	    'type': 'array',
+	    'items': { '$ref': 'canonImage'},
+	}
     }
 });
 articleSchema.required.push('master_image', 'byline');
