@@ -20,7 +20,6 @@ var emailSchema = {
 var componentSchema = {
     'title': 'base component schema',
     'type': 'object',
-    'id': '#component',
     'required': ['metadata', 'slug', 'content_type', 'schema_name', 'uri'],
     'properties': {
 	    'uri': stringSchema,
@@ -51,9 +50,11 @@ componentSchema.extend = function(schema) {
 
 var imageSchema = componentSchema.extend({
     'title': 'base image schema', 
-    'id': '#image',
     'properties': {
-        'content_type': ['image/png', 'image/gif', 'image/jpeg'],
+        'content_type': {
+            'type': 'string',
+            'pattern': 'image/png|image/gif|image/jpeg'
+        },
         'metadata': {
             'properties': {
                 'alt_text': stringSchema,
@@ -64,6 +65,7 @@ var imageSchema = componentSchema.extend({
         }
     }
 });
+console.log(imageSchema);
 var canonImageSchema = imageSchema.extend({
    'title': 'canon images Schema',
     'properties': {
@@ -96,7 +98,6 @@ authorSchema.properties.metadata.properties = {
 
 articleSchema = _.merge({}, componentSchema, {
     'title': 'article Schema',
-    'id': '#component', 
     'properties': {
         'content_type': ['text/x-markdown'], //?include html or make legacy class
         'master_image': { '$ref': 'canonImage'},
