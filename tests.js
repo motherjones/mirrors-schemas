@@ -26,6 +26,7 @@ exports.testComponentIsNotAuthor = function(test) {
 };
 var image = _.merge({}, component, {
     'content_type': 'image/png',
+    'uri': 'image/png'
 })
 var author = _.merge({}, component, {
     'slug': 'kevin-drum',
@@ -47,7 +48,8 @@ exports.testAuthorIsAuthor = function(test) {
 
 exports.testImageIsImage = function(test) {
     test.expect(1);
-    test.equal(tv4s.validateMultiple(image, schemas.imageSchema, true).errors.length, 0);
+    var valid = tv4s.validateMultiple(image, schemas.imageSchema, true);
+    test.equal(valid.errors.length, 0, JSON.stringify(valid));
     test.done();
 }
 var canon_image = _.merge({}, image, {
@@ -75,7 +77,7 @@ var article = _.merge({}, component, {
     'byline': [author], //maybe make just author optional for 1
     'master_image': canon_image
 });
-exports.testCanonImageIsCanonImage = function(test) {
+exports.testArticleIsArticle = function(test) {
     test.expect(1);
     test.equal(tv4s.validateMultiple(article, schemas.articleSchema, true).errors.length, 0);
     test.done();
