@@ -27,7 +27,13 @@ exports.testComponentIsNotAuthor = function(test) {
 var image = _.merge({}, component, {
     'content_type': 'image/png',
     'uri': 'image/png'
-})
+});
+
+var bad_content_type_image = _.merge({}, component, {
+    'content_type': 'image_/png',
+    'uri': 'image/png'
+});
+
 var author = _.merge({}, component, {
     'slug': 'kevin-drum',
     'metadata': {
@@ -51,7 +57,15 @@ exports.testImageIsImage = function(test) {
     var valid = tv4s.validateMultiple(image, schemas.imageSchema, true);
     test.equal(valid.errors.length, 0, JSON.stringify(valid));
     test.done();
-}
+};
+
+exports.testBadContentTypeImageFails = function(test) {
+    test.expect(1);
+    var valid = tv4s.validateMultiple(bad_content_type_image, schemas.imageSchema, true);
+    test.equal(valid.errors.length, 1, JSON.stringify(valid));
+    test.done();
+};
+
 var canon_image = _.merge({}, image, {
     'metadata': {
         'alt_text': 'alt',
