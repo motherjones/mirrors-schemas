@@ -82,6 +82,20 @@ exports.testCanonImageIsCanonImage = function(test) {
     test.done();
 };
 
+exports.testCanonImageIsImage = function(test) {
+    test.expect(1);
+    test.equal(tv4s.validateMultiple(canon_image, schemas.imageSchema, true).errors.length, 0);
+    test.done();
+};
+
+exports.testImageIsNotCanonImage = function(test) {
+    test.expect(1);
+    test.notEqual(tv4s.validateMultiple(image, schemas.canonImageSchema, true).errors.length, 0);
+    test.done();
+};
+
+
+
 var article = _.merge({}, component, {
     'content_type': 'text/x-markdown',
     'metadata': {
