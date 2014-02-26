@@ -110,3 +110,20 @@ exports.testArticleIsArticle = function(test) {
     test.equal(tv4s.validateMultiple(article, schemas.articleSchema, true).errors.length, 0);
     test.done();
 };
+
+var component_queue = _.merge({}, component, {
+    'content_type': 'none',
+    'uri': 'blah',
+    'data_uri':  'blah',
+    'members': [
+	_.cloneDeep(image),
+	_.cloneDeep(article),
+	_.cloneDeep(canon_image)
+    ]
+});
+
+exports.testComponentQueueIsComponentQueue = function(test) {
+    test.expect(1);
+    test.equal(tv4s.validateMultiple(component_queue, schemas.componentQueueSchema, true).errors.length, 0);
+    test.done();
+};

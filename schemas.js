@@ -93,8 +93,7 @@ var authorSchema = _.merge({}, componentSchema, {
     'title': 'authors schema',
     'photograph': { '$ref': 'image' }
 });
-// photograph is *not* required!
-// authorSchema.required.push('photograph');
+
 authorSchema.properties.metadata.required = [
     'first_name', 'last_name', 'short_bio', 'email', 'end_of_article_bio'];
 authorSchema.properties.metadata.properties = {
@@ -129,12 +128,27 @@ articleSchema = _.merge({}, componentSchema, {
     }
 });
 articleSchema.required.push('master_image', 'byline');
+
+var componentQueueSchema = _.merge({}, componentSchema, {
+    'id': 'componentQueue',
+    'title': 'component queue schema',
+    'properties': {
+	'content_type': ['none'],
+	'members': {
+	    'type': 'array',
+	    'items': { '$ref': 'component' }
+	}
+    }
+});
+componentQueueSchema.required.push('members');
+
 var tv4s = tv4.freshApi();
 tv4s.addSchema(componentSchema);
 tv4s.addSchema(imageSchema);
 tv4s.addSchema(authorSchema);
 tv4s.addSchema(canonImageSchema);
 tv4s.addSchema(articleSchema);
+tv4s.addSchema(componentQueueSchema);
 
 exports.tv4s = tv4s;
 
@@ -148,3 +162,4 @@ exports.imageSchema = imageSchema;
 exports.canonImageSchema = canonImageSchema;
 exports.authorSchema = authorSchema;
 exports.articleSchema = articleSchema;
+exports.componentQueueSchema = componentQueueSchema;
