@@ -3,10 +3,11 @@
   "title": "Health",
   "uri": "/topics/health",
   "content_type": "application/json",
-  "members": [{
-    "article": {
+  "members": [
+    {
       "uri": "/environment/2014/03/tritan-certichem-eastman-bpa-free-plastic-safe",
       "content_type": "text/x-markdown",
+      "schema_name": "article",
       "slug": "",
       "metadata": {
         "title": "The Scary New Evidence on BPA-Free Plastics",
@@ -36,7 +37,7 @@
         }
       }
     },
-    "article": {
+    {
       "uri": "/mojo/2014/02/hillary-clinton-1993-individual-mandate-obamacare",
       "content_type": "text/x-markdown",
       "schema_name": "article",
@@ -69,7 +70,7 @@
         }
       }
     },
-    "article": {
+    {
       "uri": "/environment/2014/02/FDA-nutrition-labels-calories-serving-size-added-sugar",
       "content_type": "text/x-markdown",
       "schema_name": "article",
@@ -102,7 +103,7 @@
         }
       }
     },
-    "article": {
+    {
       "uri": "/mixed-media/2014/02/film-review-lunch-hour-birdstreet-productions",
       "content_type": "text/x-markdown",
       "schema_name": "article",
@@ -135,5 +136,5 @@
         }
       }
     }
-  }]
+  ]
 }
