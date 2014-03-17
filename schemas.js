@@ -134,10 +134,6 @@ var componentQueueSchema = _.merge({}, componentSchema, {
     'title': 'component queue schema',
     'properties': {
 	'content_type': ['none'],
-	'members': {
-	    'type': 'array',
-	    'items': { '$ref': 'component' }
-	}
     }
 });
 componentQueueSchema.required.push('members');
