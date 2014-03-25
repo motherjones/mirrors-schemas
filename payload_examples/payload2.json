@@ -1,28 +1,28 @@
 {
-    "slug": "photos-ice-storm-atlanta",
-    "uri": "/blue-marble/2014/02/photos-ice-storm-atlanta",
+    "slug": "ipsa-cumque-qui-veritatis",
+    "uri": "/blue-marble/2014/02/ipsa-cumque-qui-veritatis",
     "content_type": "text/x-markdown",
     "schema_name": "article",
     "metadata": {
-	"title": "PHOTOS: A \"Catastrophic...Crippling...Paralyzing\" Ice Storm",
-	"dek": "More than 100,000 homes and businesses are without power as the storm rolls on.",
-	"social_title": "Photos: A \"catastrophic...crippling...paralyzing\" ice storm",
+	"title": "PHOTOS: Re-contextualized Methodical Matrices",
+	"dek": "Voluptatum similique consectetur quasi reiciendis reprehenderit.",
+	"social_title": "Photos: Re-contextualized methodical matrices",
 	"section": "blue_marble",
 	"tags": ["Climate Desk", "Infrastructure"]
     },
     "byline": [
 	{ "schema_name": "author",
 	  "content_type": "application/json",
-	  "slug": "matt-connolly",
-	  "uri": "/authors/matt-connolly",
+	  "slug": "rosella-williamson",
+	  "uri": "/authors/rosella-williamson",
 	  "metadata": {
-	      "first_name": "Matt",
-	      "last_name": "Connolly",
-	      "title": "DC Senior Editorial Fellow",
-	      "twitter": "http://twitter.com/HeyMattConnolly",
-	      "email": "mconnolly@motherjones.com",
-	      "short_bio": "<p>Before joining <em>Mother Jones</em>, Matt was a local reporter for the dearly departed <em>Washington Examiner</em>. He has also written for the <em>New York Times</em>, the <em>Washington Pos</em>t, <em>Chicago Public Radio,</em> and the <em>Times of Trenton</em>.</p>",
-	      "end_of_article_bio": "<p class=\"author-bio-text\">Matt Connolly is the senior editorial fellow in <em>Mother Jones</em>' Washington, DC, bureau. For more of his stories, click <a href=\"/authors/matt-connolly\">here</a>."
+	      "first_name": "Rosella",
+	      "last_name": "Williamson",
+	      "title": "Central Intranet Analyst",
+	      "twitter": "http://twitter.com/twitter",
+	      "email": "nobody@example.com",
+	      "short_bio": "<p>Perspiciatis consequatur qui nobis odio doloremque aut quam tempore. Impedit voluptas aliquam est aut quae nobis. Laborum unde nobis sed quas quia omnis. Labore eligendi vero qui.</p>",
+	      "end_of_article_bio": "Harum impedit architecto perspiciatis. Molestiae possimus consequuntur qui voluptatibus a facilis quaerat."
 	  }
 	}
     ],
