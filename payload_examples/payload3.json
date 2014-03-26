@@ -1,54 +1,54 @@
 {
-    "uri": "/mixed-media/2014/02/speedy-ortiz-real-hair-ep-review",
-    "data_uri": "/files/speedy-ortiz-real-hair-ep-review/content.md",
+    "uri": "/mixed-media/2014/02/fanny-pack-mustache-single-origin-coffee",
+    "data_uri": "/files/payload2/content.md",
     "content_type": "text/x-markdown",
     "schema_name": "article",
-    "slug": "speedy-ortiz-real-hair-ep-review",
+    "slug": "fanny-pack-mustache-single-origin-coffee",
     "metadata": {
-	"title": "Speedy Ortiz's \"Real Hair\" Melds Brains With Brawn",
-	"description": "The Massachusetts rockers' new EP transcends its smart-but-rowdy roots.",
-	"social_title": "Speedy Ortiz's \"Real Hair\" melds brains with brawn",
+	"title": "Lo-fi synth etsy blog vegan.",
+	"description": "Iphone trust fund craft beer blog chambray scenester VHS echo park mustache.",
+	"social_title": "Sartorial Rerry Richardson letterpress vegan leggings twee blog.",
 	"section": "mixed-media",
 	"tags": ["music"]
     },
     "byline": [
-	{ "slug": "jon-young",
+	{ "slug": "april-veum",
 	  "schema_name": "author",
 	  "content_type": "application_json",
-	  "uri": "authors/jon-young",
+	  "uri": "authors/april-veum",
 	  "metadata": {
-	      "first_name": "Jon",
-	      "last_name": "Young",
+	      "first_name": "April",
+	      "last_name": "Veum",
 	      "title": "Contributing Writer",
-	      "short_bio": "Jon Young is a contributing writer for _Mother Jones_.",
-	      "end_of_article_bio": "Jon Young is a contributing writer for <span style=\"font-style:normal;\">Mother Jones</span>. For more of his stories, <a href=\"http://www.motherjones.com/authors/jon-young\">click here</a>.",
-	      "email": "jyoung@motherjones.com"
+	      "short_bio": "April Veum is a contributing writer for _Mother Jones_.",
+	      "end_of_article_bio": "April Veum is a contributing writer for <span style=\"font-style:normal;\">Mother Jones</span>. For more of his stories, <a href=\"#\">click here</a>.",
+	      "email": "nobody@example.com"
 	  }
 	}
     ],
     "master_image": {
-	"slug": "speedy-ortiz-real-hair-ep-review-speedyortiz630x354-jpg",
-	"uri": "/mixed-media/2014/02/speedy-ortiz-real-hair-ep-review/speedyortiz630x354.jpg",
+	"slug": "fanny-pack-mustache-single-origin-coffee630x354-jpg",
+	"uri": "/mixed-media/2014/02/fanny-pack-mustache-single-origin-coffee630x354.jpg",
 	"schema_name": "image",
 	"content_type": "image/jpeg",
 	"metadata": {
-	    "alt_text": "Speedy Ortiz",
+	    "alt_text": "Fanny pack",
 	    "caption": null,
 	    "license": "??",
-	    "attribution": "Courtesy of Carpark Records",
-	    "data_uri": "files/speedy-ortiz-real-hair-ep-review/speedyortiz630x354.jpg"
+	    "attribution": "attribution",
+	    "data_uri": "files/payload3/fanny-pack-mustache-single-origin-coffee630x354.jpg"
 	}
     },
     "photos": [
 	{ "schema_name": "canon-image",
-	  "slug": "speedy-ortiz-real-hair-300",
+	  "slug": "wayfarers-party-keffiyeh-300",
 	  "content_type": "image/jpeg",
-	  "uri": "/mixed-media/2014/02/speedy-ortiz-real-hair-ep-review/SpeedyOrtizRealHair300.jpg",
+	  "uri": "/mixed-media/2014/02/fanny-pack-mustache-single-origin-coffee/wayfarers-party-keffiyeh-300.jpg",
 	  "metadata": {
-	      "alt_text": "Cover of Real Hair",
+	      "alt_text": "Cover of albu,",
 	      "caption": null,
 	      "attribution": null,
-	      "data_uri": "files/speedy-ortiz-real-hair-ep-review/SpeedyOrtizRealHair300.jpg",
+	      "data_uri": "files/payload3/wayfarers-party-keffiyeh-300.jpg",
 	      "license": "??"
 	  }
 	}
