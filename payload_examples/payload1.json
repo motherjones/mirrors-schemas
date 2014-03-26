@@ -1,5 +1,6 @@
 {
     "uri": "/politics/2014/01/payload-one",
+    "data_uri": "/files/payload1/content.md",
     "content_type": "text/x-markdown",
     "schema_name": "article",
     "slug": "payload-one",
