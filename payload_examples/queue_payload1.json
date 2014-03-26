@@ -5,22 +5,22 @@
   "content_type": "application/json",
   "members": [
     {
-      "uri": "/environment/2014/03/tritan-certichem-eastman-bpa-free-plastic-safe",
+      "uri": "/environment/2014/03/policy-attachment-medical-necessity-fee-schedule-preventive-care-IPA-disenroll-health-maintenance-organization",
       "content_type": "text/x-markdown",
       "schema_name": "article",
       "slug": "",
       "metadata": {
-        "title": "The Scary New Evidence on BPA-Free Plastics",
+        "title": "Policy general agent centers of excellence pre-certification",
         "dek":  ""
       },
       "byline": [{ 
         "schema_name": "author",
         "content_type": "application/json",
-        "uri": "/authors/mariah-blake",
-        "slug": "",
+        "uri": "/authors/dangelo-lang",
+        "slug": "dangelo-lang",
 	      "metadata": {
-          "first_name": "Mariah",
-          "last_name": "Blake"
+          "first_name": "Dangelo",
+          "last_name": "Lang"
         }
       }],
       "master_image": {
@@ -38,22 +38,22 @@
       }
     },
     {
-      "uri": "/mojo/2014/02/hillary-clinton-1993-individual-mandate-obamacare",
+      "uri": "/mojo/2014/02/case-manager-HIPAA-first-dollar-coverage-covered-person",
       "content_type": "text/x-markdown",
       "schema_name": "article",
-      "slug": "",
+      "slug": "case-manager-HIPAA-first-dollar-coverage-covered-person",
       "metadata": {
-        "title": "Hillary Clinton in 1993: Individual Mandate Is a \"Much Harder Sell\"",
+        "title": "Admitting privileges benefit gatekeeper HMO lifetime maximum grievance risk",
         "dek":  ""
       },
       "byline": [{ 
         "schema_name": "author",
         "content_type": "application/json",
-        "uri": "/authors/patrick-caldwell",
-        "slug": "",
+        "uri": "/authors/anastasia-huels",
+        "slug": "anastasia-huels",
 	      "metadata": {
-          "first_name": "Patrick",
-          "last_name": "Caldwell"
+          "first_name": "Anastasia",
+          "last_name": "Huels"
         }
       }],
       "master_image": {
@@ -71,22 +71,22 @@
       }
     },
     {
-      "uri": "/environment/2014/02/FDA-nutrition-labels-calories-serving-size-added-sugar",
+      "uri": "/environment/2014/02/naic-pregnancy-care-aso-portability",
       "content_type": "text/x-markdown",
       "schema_name": "article",
-      "slug": "",
+      "slug": "naic-pregnancy-care-aso-portability",
       "metadata": {
-        "title": "",
+        "title": "Preferred provider organization morbidity health reimbursement arrangement HMO credentialing",
         "dek":  ""
       },
       "byline": [{ 
         "schema_name": "author",
         "content_type": "application/json",
-        "uri": "/authors/katie-rose-quandt",
-        "slug": "",
+        "uri": "/authors/janice-tillman",
+        "slug": "janice-tillman",
 	      "metadata": {
-          "first_name": "Katie Rose",
-          "last_name": "Quandt"
+          "first_name": "Janice",
+          "last_name": "Tillman"
         }
       }],
       "master_image": {
@@ -104,22 +104,22 @@
       }
     },
     {
-      "uri": "/mixed-media/2014/02/film-review-lunch-hour-birdstreet-productions",
+      "uri": "/mixed-media/2014/02/diagnostic-related-group-workers-compensation",
       "content_type": "text/x-markdown",
       "schema_name": "article",
-      "slug": "",
+      "slug": "diagnostic-related-group-workers-compensation",
       "metadata": {
-        "title": "Film Review: Lunch Hour",
+        "title": "Assignment of benefits home health care renewal impaired risk health maintenance ",
         "dek":  ""
       },
       "byline": [{ 
         "schema_name": "author",
         "content_type": "application/json",
-        "uri": "/authors/asawin-suebsaeng",
-        "slug": "",
+        "uri": "/authors/reba-willms",
+        "slug": "reba-willms",
 	      "metadata": {
-          "first_name": "Asawin",
-          "last_name": "Suebsaeng"
+          "first_name": "Reba",
+          "last_name": "Willms"
         }
       }], 
       "master_image": {
