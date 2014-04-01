@@ -1,9 +1,15 @@
 var _ = require('lodash');
 var tv4 = require('tv4');
 
-var stringSchema = {
-    'id': 'stringSchema',
-    'type': 'string'
+var stringSchema = function (merge_with){
+  if (merge_with === "undefined") {
+    merge_with = {};
+  }
+  return _.merge({}, {
+      'id': 'stringSchema',
+      'type': 'string'
+    },
+    merge_with);
 };
 
 var slugSchema = {
@@ -27,25 +33,30 @@ var componentSchema = {
     'type': 'object',
     'required': ['metadata', 'slug', 'content_type', 'schema_name', 'uri'],
     'properties': {
-	    'uri': stringSchema,
-	    'data_uri': stringSchema,
-        'slug': slugSchema,
-        'content_type': _.clone(stringSchema),
-        'schema_name': stringSchema, 
-        'metadata': {
-            'type': 'object',
-            'properties': [],
-            'required': [],
-        },
-    },
-    'additionalProperties': {
-        'anyOf': [{'$ref': 'component'}, {
+	    'uri': stringSchema(),
+	    'data_uri': stringSchema(),
+      'slug': slugSchema,
+      'content_type': stringSchema(),
+      'schema_name': stringSchema(), 
+      'metadata': {
+        'type': 'object',
+        'properties': [],
+        'required': [],
+      },
+      'attributes': {
+        'type': 'object',
+        'properties': [],
+        'required': [],
+        'additionalProperties': {
+          'anyOf': [{'$ref': 'component'}, {
             'type': 'array',
             'items': {
-                '$ref': 'component'
+              '$ref': 'component'
             }
-        }]
-    }
+          }] 
+        },
+      }
+    },
 };
 componentSchema.extend = function(schema) {
     return _.merge({}, this, schema, function(a, b) {
@@ -64,27 +75,27 @@ var imageSchema = componentSchema.extend({
         },
         'metadata': {
             'properties': {
-                'alt_text': stringSchema,
-                'caption': stringSchema,
+                'alt_text': stringSchema(),
+                'caption': stringSchema(),
                 'license': ['MIT', 'GPL', 'CC', 'PD', '??'],
-                'attribution': stringSchema //require if no byline on canonImage
+                'attribution': stringSchema() //require if no byline on canonImage
             }
         }
     }
 });
 console.log(imageSchema);
-console.log(stringSchema);
+console.log(stringSchema());
 var canonImageSchema = imageSchema.extend({
-   'id': 'canonImage',
-   'title': 'canon images Schema',
-    'properties': {
-        'metadata': {
-            'required': ['alt_text', 'attribution', 'license']
-        },
-        'byline': {
-            'type': 'array',
-            'items': { '$ref': 'author' }
-        }
+  'id': 'canonImage',
+  'title': 'canon images Schema',
+  'properties': {
+    'metadata': {
+      'required': ['alt_text', 'attribution', 'license']
+    },
+    'byline': {
+      'type': 'array',
+        'items': { '$ref': 'author' }
+      }
     }
 })
 
@@ -92,17 +103,17 @@ var authorSchema = _.merge({}, componentSchema, {
     'id': 'author',
     'title': 'authors schema',
     'photograph': { '$ref': 'image' }
-});
+});(),
 
 authorSchema.properties.metadata.required = [
     'first_name', 'last_name', 'short_bio', 'email', 'end_of_article_bio'];
 authorSchema.properties.metadata.properties = {
-    'first_name': stringSchema,
-    'last_name': stringSchema,
-    'short_bio': stringSchema,
+    'first_name': stringSchema(),
+    'last_name': stringSchema(),
+    'short_bio': stringSchema(),
     'email': emailSchema,
-    'twitter_user': stringSchema,
-    'end_of_article_bio': stringSchema
+    'twitter_user': stringSchema(),
+    'end_of_article_bio': stringSchema()
 };
 
 articleSchema = _.merge({}, componentSchema, {
@@ -117,8 +128,8 @@ articleSchema = _.merge({}, componentSchema, {
         },
         'metadata': {
             'properties': {
-                'title': stringSchema,
-                'description': stringSchema
+                'title': stringSchema(),
+                'description': stringSchema()
             }
         },
 	'photos': {
@@ -148,7 +159,7 @@ tv4s.addSchema(componentQueueSchema);
 
 exports.tv4s = tv4s;
 
-exports.stringSchema = stringSchema;
+exports.stringSchema = stringSchema();
 exports.slugSchema = slugSchema; 
 exports.uriSchema = uriSchema;
 exports.emailSchema = emailSchema;
